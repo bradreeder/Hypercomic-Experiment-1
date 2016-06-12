@@ -1,0 +1,69 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/*@media only screen and (min-width: 147px) {
+  .col-1-25 {
+    border: 1px solid black;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .col-1-25 {
+    border: 2px solid black;
+  }
+} */
+
+body {
+  background-color: black;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+.col-1-25 {
+  width: 3%;
+  height: 3%;
+  display: inline-block;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}
+
+.green {
+  background-color: green;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.darkorchid  {
+  background-color: darkorchid;
+}
