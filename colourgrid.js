@@ -49,7 +49,7 @@
         }
     }
 
-    function mainEvent(e) {
+    function mainEvent(event) {
         switch(event.target.className) {
             case "col-1-25 green":
                 removeColour('green');
