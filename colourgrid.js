@@ -3,10 +3,9 @@
     var container = document.getElementById('container');
     var colours = ['orange','green','purple','red','red','yellow','yellow','blue','blue',
                    'pink','darkorchid','white','white','white','white'];
-    var numberOfColours = 9;
 
+    //fills the page with a grid of divs within the div container
     function createGrid() {
-        wipeContainer();
         for (i = 1; i < 1090; i++) {
             var thisDiv = document.createElement('div');
             thisDiv.id = i;
@@ -16,13 +15,12 @@
         createColumns();
         colourGrid();
     }
-
+    //takes this grid and creates rows and columns by assigning the appropriate
+    //elements the class column. (written in a rush: needs refactoring but works for now)
     function createColumns() {
-        var counter = 0;
-        for (k = 10; k < 1090; k++) {
+        for (k = 10, counter = 1; k < 1090; k++, counter++) {
             var thisDiv = document.getElementById(k);
             thisDiv.className = "col-1-25 column";
-            counter++;
             if (counter % 6 === 0)
                 k += 18;
             else if (counter % 3 === 0)
@@ -37,7 +35,8 @@
             thisDiv.className = "col-1-25 column";
         }
     }
-
+    //fills each non-column div of the grid with a random colour from colours array
+    //the function calls itself every 100ms until there are no colours remaining in the array.
     function colourGrid() {
         if (colours.length !== 0) {
             for (i = 1; i < 1090; i++) {
@@ -45,71 +44,35 @@
                 if (thisDiv.className !== "col-1-25 column")
                     thisDiv.className = "col-1-25 " + colours[Math.floor(Math.random() * colours.length)];
             }
-            setTimeout(function(){colourGrid();}, 100);
+            setTimeout(colourGrid, 100);
         }
     }
-
+    //clicking on any child div of container will call this event.
     function mainEvent(event) {
-        switch(event.target.className) {
-            case "col-1-25 green":
-                removeColour('green');
-                break;
-            case "col-1-25 orange":
-                removeColour('orange');
-                break;
-            case "col-1-25 purple":
-                removeColour('purple');
-                break;
-            case "col-1-25 pink":
-                removeColour('pink');
-                break;
-            case "col-1-25 darkorchid":
-                removeColour('darkorchid');
-                break;
-            case "col-1-25 red":
-                removeColour('red');
-                break;
-            case "col-1-25 blue":
-                removeColour('blue');
-                break;
-            case "col-1-25 yellow":
-                removeColour('yellow');
-                break;
-            case "col-1-25 white":
-                removeColour('white');
-                break;
-            case "col-1-25":
-                if (numberOfColours === 0) {
-                    colours = ['orange','green','purple','red','red','yellow','yellow','blue','blue',
-                               'pink','darkorchid','white','white','white','white'];
-                    createGrid();
-                }
-                break;
+        var targetColour = event.target.className.replace(/col-1-25\s/, '');
+        //if there are no more colours left in the array then reset
+        if (colours.length === 0) {
+              colours = ['orange','green','purple','red','red','yellow','yellow','blue','blue',
+                         'pink','darkorchid','white','white','white','white'];
+              colourGrid();
         }
+        //if target element has a colour then remove it
+        else if (targetColour !== "column")
+            removeColour(targetColour);
     }
 
     function removeColour(colour) {
-        numberOfColours--;
         //remove colour class from each div that has it
         var elems = document.querySelectorAll('div.' + colour);
         [].forEach.call(elems, function(el) {
-            el.classList.remove(colour);
+            el.className = "col-1-25";
         });
-        //removes the selected colour from colours array
-        for (i = 0; i < colours.length; i++) {
+        //remove the colour from colours array
+        for (i = 0; i < colours.length; i++)
             if (colours[i] === colour) {
                 colours.splice(i, 1);
                 i--;
             }
-        }
-    }
-
-    function wipeContainer() {
-        numberOfColours = 9;
-        //resets numberOfColours and removes all container's children
-        while(container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
     }
 
     window.addEventListener('load', createGrid, false);
