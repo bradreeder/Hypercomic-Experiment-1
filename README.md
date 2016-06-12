@@ -4,7 +4,7 @@ Stained-Glass is a design experiment originally inspired by a pixellated stained
 
 I am currently considering extending the basic design into an idea for a [hypercomic](https://en.wikipedia.org/wiki/Hypercomics).
 
-[A link to the page.](http://bradreeder.github.io/Hypercomic-Experiment-1/index.html)
+The page is hosted here: [http://bradreeder.github.io/Hypercomic-Experiment-1/index.html](http://bradreeder.github.io/Hypercomic-Experiment-1/index.html)
 
 #### What
 
