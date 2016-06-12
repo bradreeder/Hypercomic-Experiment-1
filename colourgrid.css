@@ -5,18 +5,6 @@
   cursor: pointer;
 }
 
-/*@media only screen and (min-width: 147px) {
-  .col-1-25 {
-    border: 1px solid black;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .col-1-25 {
-    border: 2px solid black;
-  }
-} */
-
 body {
   background-color: black;
 }
