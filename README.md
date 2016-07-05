@@ -1,6 +1,6 @@
 ## Stained Glass Window
 
-Stained-Glass is a design experiment originally inspired by a pixellated stained glass window made by [Gerhard Richter](http://media.tumblr.com/tumblr_lz4rky6FKd1qggdq1.jpg).
+Stained-Glass is a design experiment originally inspired by a pixellated stained glass window made by [Gerhard Richter](http://media.tumblr.com/tumblr_lz4rky6FKd1qggdq1.jpg) and [video noise](https://en.wikipedia.org/wiki/Noise_(video)).
 
 I am currently considering extending the basic design into an idea for a [hypercomic](https://en.wikipedia.org/wiki/Hypercomics).
 
